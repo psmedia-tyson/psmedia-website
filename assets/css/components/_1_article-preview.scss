@@ -1,0 +1,216 @@
+@use '../base' as *;
+
+/* -------------------------------- 
+
+File#: _1_article-preview
+Title: Article Preview
+Descr: Blog post excerpt, containing a link to the article page
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+:root {
+  --story-padding-md: 16px;
+  --story-padding-sm: 8px;
+}
+
+.story__img {
+  display: block;
+  transition: opacity .2s;
+  margin-bottom: var(--space-xs);
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  img {
+    box-shadow: 0 30px 60px -12px rgba(50,50,93,0.25), 0 18px 36px -18px rgba(0,0,0,0.3);
+    border-radius: var(--radius-lg);
+    border-bottom-left-radius: 0;
+    display: block;
+    width: 100%;
+  }
+}
+
+.story--featured {
+
+  .story__img {
+
+    img {
+      border-radius: var(--radius-lg);
+    }
+  }
+}
+
+.story__category {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-contrast-higher);
+  line-height: 1;
+  text-decoration: none;
+  font-size: var(--text-sm);
+  background-color: alpha(var(--color-primary), 0.2);
+  padding: var(--space-xxs);
+  border-radius: var(--radius-md);
+  transition: background-color .2s;
+
+  &:hover {
+    background-color: alpha(var(--color-primary), 0.3);
+  }
+}
+
+.app-post {
+
+  .story__content {
+    border-left: 1px solid var(--color-contrast-lower);
+    padding-bottom: var(--space-sm);
+    padding-top: var(--space-sm);
+  
+    .post-categories {
+      display: flex;
+      padding-left: var(--story-padding-md);
+      position: relative;
+  
+      li {
+        position: relative;
+
+        &::after {
+          background-color: var(--color-contrast-lower);
+          border-radius: 50%;
+          bottom: 0;
+          height: 4px;
+          content: "";
+          margin: auto 0;
+          position: absolute;
+          right: 18px;
+          top: 0;
+          width: 4px;
+        }
+    
+        a {
+          color: var(--color-accent);
+          font-size: 14px;
+          font-weight: 600;
+          opacity: 0.7;
+          margin-right: 40px;
+          position: relative;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+  
+        &:last-child {
+          margin-right: 0;
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+  
+      &::before {
+        background-color: var(--color-accent);
+        bottom: 0;
+        content: "";
+        left: -1px;
+        position: absolute;
+        top: 0;
+        width: 1px;
+      }
+    }
+  }
+
+  .story__title {
+    font-family: var(--font-primary);
+    font-size: 24px;
+    padding-left: 16px;
+    text-transform: none;
+  
+    a {
+      color: var(--color-contrast-higher);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  .story__author {
+    --author-img-size: 50px;
+    display: flex;
+    padding-left: var(--story-padding-md);
+  
+    img {
+      border: 1px solid var(--color-accent);
+      display: block;
+      width: var(--author-img-size);
+      height: var(--author-img-size);
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+    }
+  
+    .app-story-meta {
+      font-size: var(--text-sm);
+    }
+  }
+  
+  .story__author-name,
+  .app-post-date,
+  .story__meta {
+    font-size: 14px;
+  }
+  
+  
+  .app-post-date {
+    position: relative;
+  
+    span {
+      font-weight: 600;
+      padding-left: 16px;
+    }
+  
+    &::before {
+      background-color: var(--color-contrast-low);
+      bottom: 0;
+      content: "";
+      left: -1px;
+      position: absolute;
+      top: 0;
+      width: 1px;
+    }
+  }
+  
+  .story__author-name {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-contrast-higher);
+  }
+  
+  .app-author-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: var(--story-padding-md);
+  
+    .story__meta {
+      color: var(--color-contrast-medium);
+    }
+  }
+}
+
+// --featured
+@include breakpoint(md) {
+  .story--featured {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: var(--space-md);
+    align-items: center;
+
+    .story__img {
+      margin: 0;
+    }
+  }
+}

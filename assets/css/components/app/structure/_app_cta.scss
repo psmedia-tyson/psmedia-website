@@ -1,0 +1,105 @@
+@use '../../../base' as *;
+
+.app-cta {
+  margin-top: -1px;
+  position: relative;
+
+  &::after {
+    background-color: var(--color-brand-dark);
+    bottom: 0;
+    content: "";
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  .app-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: var(--space-xl);
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    z-index: 3;
+
+    .app-summary {
+      font-size: 16px;
+
+      p {
+        text-shadow: 0 0 5px var(--color-true-white);
+      }
+    }
+
+    .app-actions {
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+
+      .lets-talk-arrow {
+        height: auto;
+        position: absolute;
+        right: 30px;
+        top: -175px;
+        transform: rotate(75deg);
+        width: 225px;
+      }
+
+      a {
+        color: var(--color-black);
+        font-family: var(--font-heading);
+        font-size: 3em;
+        font-weight: 500;
+        line-height: 1.2;
+        position: relative;
+        
+        span {
+          opacity: 0.8;
+        }
+
+        &::after {
+          background-color: var(--color-accent);
+          bottom: 0;
+          height: 3px;
+          content: "";
+          left: 0;
+          position: absolute;
+          transition: all 0.2s ease-in-out;
+          right: 0;
+        }
+
+        &:hover {
+
+          span {
+            opacity: 1;
+          }
+
+          &::after {
+            left: 50%;
+            right: 50%;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      background-color: var(--color-true-white);
+      box-shadow: 0px 0px 50px 0px rgba(6,28,40,0.15);
+    }
+  }
+}
+
+body.single-services {
+
+  .app-cta {
+  
+    &::before {
+      background-color: var(--color-brand-dark-lighter);
+      content: "";
+      height: 50%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}

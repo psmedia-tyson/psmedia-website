@@ -1,0 +1,12 @@
+@use '../../../../base' as *;
+
+.app-testimonial-tile {
+  box-shadow: 0px 0px 50px 0px rgba(6,28,40,0.15);
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  z-index: 1;
+
+  &:hover {
+    z-index: 3;
+  }
+}

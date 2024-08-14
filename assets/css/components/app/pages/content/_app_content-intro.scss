@@ -1,0 +1,38 @@
+@use '../../../../base' as *;
+
+.app-content-intro {
+  padding-bottom: var(--space-xl);
+
+  .app-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-right: var(--space-lg);
+
+    p {
+      color: var(--color-black);
+      font-size: 18px;
+      line-height: 1.7em;
+      margin-top: 0;
+      opacity: 0.8;
+
+      &:first-of-type {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        margin-bottom: 2rem;
+
+        a {
+
+          &::after {
+            background-color: var(--color-accent);
+            bottom: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .app-what-we-do {
+    padding-left: var(--space-lg);
+  }
+}

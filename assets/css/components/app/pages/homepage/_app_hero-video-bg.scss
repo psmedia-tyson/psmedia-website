@@ -1,0 +1,108 @@
+@use '../../../../base' as *;
+
+.hero-video-bg {
+  align-items: flex-end;
+  display: flex;
+  height: 100vh;
+  margin-top: -160px;
+  min-height: 680px;
+  padding-bottom: 88px;
+  padding-top: 160px;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    background-color: rgba(255, 255, 255, 0.5);
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 3;
+  }
+  
+  .hero-video-bg__content {
+    max-width: 100%;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 9;
+
+    .hero-video-bg__content--title {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      margin-bottom: 51px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 800px;
+      text-transform: uppercase;
+      
+      span {
+        opacity: 0.7;
+      }
+
+      h1 {
+        font-size: 80px;
+      }
+    }
+
+    .app-confidence-grid {
+      font-family: var(--font-heading);
+
+      .app-confidence {
+
+        span {
+          display: block;
+          font-size: 24px;
+          line-height: 1;
+          opacity: 0.7;
+          text-transform: uppercase;
+  
+          &:nth-child(even) {
+            font-size: 34px;
+            margin-top: 9px;
+            opacity: 1;
+          }
+        }
+      }
+
+      .confidence__cta {
+
+        .btn__hero {
+          background-color: var(--color-accent);
+          color: var(--color-white);
+          font-size: 20px;
+          height: 64px;
+          padding-left: var(--app-spacing-lg);
+          padding-right: var(--app-spacing-lg);
+          text-transform: uppercase;
+
+          &:hover {
+            background-color: var(--color-accent-dark);
+          }
+        }
+      }
+    }
+  }
+
+  .hero-video-bg__video {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    video {
+      bottom: 0;
+      object-fit: cover;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}

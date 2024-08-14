@@ -1,0 +1,26 @@
+@use '../../../../../base' as *;
+
+.app-services {
+  
+  .app-service {
+
+    .app-summary {
+
+      h2 {
+        font-size: 48px;
+      }
+    }
+
+    // even row adjustments
+    &:nth-child(even) {
+      
+      .app-summary {
+        order: 2;
+      }
+
+      .app-media {
+        order: 1;
+      }
+    }
+  }
+}

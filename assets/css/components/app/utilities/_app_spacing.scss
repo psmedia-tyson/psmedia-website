@@ -1,0 +1,18 @@
+@use '../../../base' as *;
+
+:root {
+  --app-spacing-sm:        15px;
+  --app-spacing-md:        30px;
+  --app-spacing-lg:        60px;
+  --app-border-radius:     10px;
+  --app-border-radius-lg:  20px;
+  --app-border-radius-xl:  40px;
+  --app-border-radius-xxl: 80px;
+}
+
+body {
+
+  &[data-theme="dark"] {
+    
+  }
+}

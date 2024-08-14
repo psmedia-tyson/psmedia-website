@@ -1,0 +1,10 @@
+@use '../../../base' as *;
+
+.app-video {
+  border-radius: var(--app-border-radius-xl);
+  overflow: hidden;
+
+  .vp-sidedock { 
+    top: 100px!important;
+  }
+}

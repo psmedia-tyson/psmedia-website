@@ -1,0 +1,6 @@
+// import the basic style of the framework
+@use 'base' as *;
+
+// add your custom style
+@use 'custom-style';
+@use 'components/**/*.scss';

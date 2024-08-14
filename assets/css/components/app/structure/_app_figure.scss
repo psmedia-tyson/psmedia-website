@@ -1,0 +1,11 @@
+@use '../../../base' as *;
+
+.app-figure {
+  
+  img,
+  svg {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+}

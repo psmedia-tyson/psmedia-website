@@ -1,0 +1,153 @@
+@use '../base' as *;
+
+/* -------------------------------- 
+
+File#: _1_switch
+Title: Switch
+Descr: Custom ON/OFF checkbox toggle
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+// :root {
+//   /* style */
+//   --switch-width: 64px;
+//   --switch-height: 32px;
+//   --switch-padding: 3px;
+
+//   /* animation */
+//   --switch-animation-duration: 0.2s;
+// }
+
+// .switch {
+//   position: relative;
+//   display: inline-flex;
+//   flex-shrink: 0;
+//   align-items: center;
+//   width: var(--switch-width);
+//   height: var(--switch-height);
+//   border-radius: 50em;
+//   padding: var(--switch-padding) 0;
+
+//   &::after,
+//   &::before {
+//     content: "";
+//     background-size: 14px 14px;
+//     display: block;
+//     width: 14px;
+//     height: 14px;
+//     pointer-events: none;
+//     position: absolute;
+//     z-index: 3;
+//   }
+
+//   &::before {
+//     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='sun icon icon--xs' viewBox='0 0 16 16'%3E%3Ctitle%3EEnable light mode%3C/title%3E%3Cpath fill='%23e8c54b' d='M7 0h2v2H7zM12.88 1.637l1.414 1.415-1.415 1.413-1.414-1.414zM14 7h2v2h-2zM12.95 14.433l-1.415-1.414 1.414-1.414 1.415 1.413zM7 14h2v2H7zM2.98 14.363L1.566 12.95l1.415-1.414 1.414 1.415zM0 7h2v2H0zM3.05 1.707L4.465 3.12 3.05 4.535 1.636 3.121z'%3E%3C/path%3E%3Cpath fill='%23e8c54b' d='M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4z'%3E%3C/path%3E%3C/svg%3E");
+//     left: 9px;
+//   }
+
+//   &::after {
+//     background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' class='moon icon icon--xs' viewBox='0 0 16 16'%3E%3Ctitle%3EEnable dark mode%3C/title%3E%3Cpath fill='%234f606e' d='M6,0C2.5,0.9,0,4.1,0,7.9C0,12.4,3.6,16,8.1,16c3.8,0,6.9-2.5,7.9-6C9.9,11.7,4.3,6.1,6,0z'%3E%3C/path%3E%3C/svg%3E");
+//     right: 9px;
+//   }
+// }
+
+// body {
+
+//   &[data-theme="dark"] {
+    
+//     .switch {
+    
+//       &::after {
+//         background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' class='moon icon icon--xs' viewBox='0 0 16 16'%3E%3Ctitle%3EEnable dark mode%3C/title%3E%3Cpath fill='%23ffffff' d='M6,0C2.5,0.9,0,4.1,0,7.9C0,12.4,3.6,16,8.1,16c3.8,0,6.9-2.5,7.9-6C9.9,11.7,4.3,6.1,6,0z'%3E%3C/path%3E%3C/svg%3E");
+//       }
+//     }
+//   }
+// }
+
+// .switch__input, .switch__label {
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+// }
+
+// .switch__input {
+//   margin: 0;
+//   padding: 0;
+//   opacity: 0;
+//   height: 0;
+//   width: 0;
+//   pointer-events: none;
+
+//   &:checked + .switch__label {
+//     background-color: alpha(var(--color-primary), 0.2);
+//   }
+
+//   &:checked + .switch__label + .switch__marker {
+//     left: calc(100% - var(--switch-height) + var(--switch-padding));
+//   }
+
+//   &:focus + .switch__label,
+//   &:active + .switch__label {
+    
+//   }
+
+//   &:checked:focus + .switch__label,
+//   &:checked:active + .switch__label {
+    
+//   }
+// }
+
+// body {
+
+//   &[data-theme="dark"] {
+    
+//     .switch__input {
+    
+//       &:checked + .switch__label {
+//         background-color: alpha(var(--color-black), 1);
+//       }
+//     }
+//   }
+// }
+
+// .switch__label {
+//   box-shadow: 0 0 10px alpha(var(--color-accent), 0.2);
+//   width: 100%;
+//   height: 100%;
+//   color: transparent;
+//   user-select: none;
+//   background-color: alpha(var(--color-white), 0.5);
+//   border-radius: inherit;
+//   z-index: 1;
+//   transition: var(--switch-animation-duration);
+//   overflow: hidden;
+// }
+
+// .switch__marker {
+//   position: relative;
+//   background-color: var(--color-white);
+//   width: calc(var(--switch-height) - var(--switch-padding) * 2);
+//   height: calc(var(--switch-height) - var(--switch-padding) * 2);
+//   border-radius: 50%;
+//   z-index: 2;
+//   pointer-events: none;
+//   left: var(--switch-padding);
+//   transition: left var(--switch-animation-duration);
+//   will-change: left;
+// }
+
+// body {
+
+//   &[data-theme="dark"] {
+
+//     .switch__label {
+//       box-shadow: 0 0 10px alpha(var(--color-white), 0.2);
+//     }
+    
+//     .switch__marker {
+//       background-color: var(--color-black);
+      
+//     }
+//   }
+// }

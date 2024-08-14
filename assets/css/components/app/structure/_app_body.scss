@@ -1,0 +1,33 @@
+@use '../../../base' as *;
+
+
+body {
+  background-color: var(--color-white);
+  margin:0;
+}
+
+.app-body {
+  transition: all 0.2s ease-in-out;
+}
+
+// body {
+
+//   &[data-theme='light'] {
+//     .app-body {
+//       background-color: var(--color-white);
+//     }
+//   }
+
+//   &[data-theme='dark'] {
+//     .app-body {
+//       background-color: var(--color-black);
+//     }
+//   }
+// }
+
+// .theme-light {
+  
+//   .app-body {
+//     background-color: var(--color-white);
+//   }
+// }

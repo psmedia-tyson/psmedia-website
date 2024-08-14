@@ -1,0 +1,22 @@
+@use '../../../base' as *;
+
+.app-section-divider {
+  height: 250px;
+  width: 100%;
+
+  &__hero-footer {
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(4,5,6,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(4,5,6,1) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(4,5,6,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#040506",GradientType=1);
+  }
+
+  &__services-footer {
+    background: rgb(246,244,246);
+background: -moz-linear-gradient(0deg, rgba(246,244,246,1) 0%, rgba(4,5,6,0) 100%);
+background: -webkit-linear-gradient(0deg, rgba(246,244,246,1) 0%, rgba(4,5,6,0) 100%);
+background: linear-gradient(0deg, rgba(246,244,246,1) 0%, rgba(4,5,6,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f6f4f6",endColorstr="#040506",GradientType=1);
+  }
+}

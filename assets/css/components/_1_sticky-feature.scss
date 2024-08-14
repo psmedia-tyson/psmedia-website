@@ -1,0 +1,237 @@
+@use '../base' as *;
+
+/* -------------------------------- 
+
+File#: _1_sticky-feature
+Title: Sticky Feature
+Descr: List of product features with sticky images
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.sticky-feature__wrap {
+  background-color: var(--color-black);
+}
+
+.sticky-feature {
+  margin-top: -10vh;
+  position: relative;
+  z-index: 2;
+
+  .sticky-feature-aside {
+    position: relative;
+  }
+}
+
+.sticky-feature__title {
+  color: var(--color-white);
+  text-align: center;
+}
+
+.sticky-feature__content-figure {
+  /* images visible on small screens */
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: var(--space-md);
+
+  img {
+    box-shadow: var(--shadow-sm);
+    display: block;
+    width: 100%;
+  }
+}
+
+.sticky-feature__media-list {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sticky-feature__media-item {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sticky-feature-current-item {
+  z-index: 3;
+
+  .sticky-feature__media-figure {
+    
+    .figure__content {
+      
+  
+      p {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.sticky-feature__media-figure {
+  /* images visible on bigger screens */
+  overflow: hidden;
+  opacity: 0;
+
+  img {
+    display: block;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+    max-height: 90vh;
+  }
+
+  .figure__content {
+    padding: var(--space-sm);
+
+    p {
+      color: var(--color-white);
+      font-size: 16px;
+      margin-bottom: var(--space-sm);
+    }
+
+    .app-link__arrow {
+      align-items: center;
+      color: var(--color-white);
+      display: flex;
+      font-size: 16px; 
+      font-weight: 600;
+      position: relative;
+      text-transform: uppercase;
+      z-index: 9;
+
+      .app-link__arrow-svg {
+        align-items: center;
+        display: flex;
+        margin-right: var(--space-sm);
+        position: relative;
+        transition: all 0.2s ease-in-out;
+        width: 35px;
+        
+        .line-bar {
+          background-color: var(--color-accent);
+          height: 2px;
+          width: 98%;
+        }
+
+        svg {
+          fill: var(--color-accent);
+          height: 20px;
+          position: absolute;
+          right: 0;
+          width: 11px;
+        }
+      }
+
+      &:hover {
+
+        .app-link__arrow-svg {
+          width: 75px;
+        }
+      }
+    }
+  }
+
+  .sticky-feature-current-item & {
+    opacity: 1;
+  }
+}
+
+@include breakpoint(md) {
+
+  .sticky-feature {
+    position: relative;
+    z-index: 2;
+  
+    .sticky-feature-aside {
+  
+      .app-branding-background {
+        padding-top: 25vh;
+      }
+    }
+  }
+
+  .sticky-feature__title {
+    color: var(--color-white);
+    display: inline-flex;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    font-size: var(--text-xxl);
+    cursor: pointer;
+    opacity: 0.5;
+    text-align: left;
+
+    &::after {
+      background-color: var(--color-accent);
+      bottom: -5px;
+      content: "";
+      height: 2px;
+      left: 0;
+      position: absolute;
+      right: 100%;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:hover, .sticky-feature-current-item & {
+      opacity: 1;
+    }
+  }
+
+  .sticky-feature__content-list {
+    padding-top: 50vh;
+    padding-bottom: 50vh;
+
+    .sticky-feature-current-item {
+
+      .sticky-feature__title {
+
+        &::after {
+          right: 0; 
+        }
+      }
+    }
+  }
+
+  .sticky-feature__content-figure {
+    /* show only to screen readers */
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+  }
+
+  .sticky-feature__media-list {
+    /* text overlay gradients */
+    &::before, &::after {
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      width: 100vw;
+      height: 100px;
+      // pointer-events: none;
+    }
+
+    &::before {
+      top: 0;
+      background: linear-gradient(to bottom, var(--color-black), alpha(var(--color-black), 0.8), alpha(var(--color-black), 0));
+    }
+
+    &::after {
+      bottom: 0;
+      background: linear-gradient(to top, var(--color-black), alpha(var(--color-black), 0.8), alpha(var(--color-black), 0));
+    }
+  }
+}

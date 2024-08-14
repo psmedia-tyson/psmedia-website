@@ -1,0 +1,46 @@
+@use '../../../base' as *;
+
+.app-link__arrow {
+  align-items: center;
+  color: var(--color-white);
+  display: flex;
+  font-size: 16px; 
+  font-weight: 600;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 9;
+
+  .app-link__arrow-svg {
+    align-items: center;
+    display: flex;
+    margin-right: var(--space-sm);
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    width: 35px;
+    
+    .line-bar {
+      background-color: var(--color-accent);
+      height: 2px;
+      width: 98%;
+    }
+
+    svg {
+      fill: var(--color-accent);
+      height: 20px;
+      position: absolute;
+      right: 0;
+      width: 11px;
+    }
+  }
+
+  &:hover {
+
+    .app-link__arrow-svg {
+      width: 75px;
+    }
+  }
+
+  &--dark {
+    color: var(--color-black);
+  }
+}

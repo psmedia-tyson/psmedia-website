@@ -1,0 +1,7 @@
+@use '../../../../../base' as *;
+
+.app-service__intro--video {
+  margin-top: -225px;
+  position: relative;
+  z-index: 3;
+}
