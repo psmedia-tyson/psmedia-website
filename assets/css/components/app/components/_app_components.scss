@@ -1,0 +1,12 @@
+@use '../../../base' as *;
+
+.app-trusted-by {
+
+  .app-trusted-by__grid {
+
+    img {
+      height: 55px;
+      width: auto;
+    }
+  }
+}
